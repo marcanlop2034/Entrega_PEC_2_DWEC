@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 1</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.3/dist/css/uikit.min.css" />
+
+</head>
+<body>
+ 
+
+    
+        <div class="uk-child-width-expand@s uk-text-center" uk-grid> 
+       
+            <div>
+                <div class="uk-section uk-section-default" id="detalle" hidden>
+                
+                    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+                        <div class="uk-flex uk-flex-middle">
+                            <div class="uk-margin-small-right">
+                                <img class="uk-border-circle" src="foto.webp" width="80" height="80" alt="Foto de perfil">
+                            </div>
+                            <div>
+                                <h3 class="uk-card-title" id="name"></h3>
+                                <p><span uk-icon="icon: mail" id="email"></span> </p>
+                                <p><span uk-icon="icon: phone" id="phone"></span> </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+ 
+
+
+        <div class=" uk-flex-middle uk-height-viewport">
+            <div class="uk-card uk-card-default uk-card-body">
+                <h2 class="uk-card-title uk-text-center">Listado Usuarios</h2>
+                <button class="uk-button uk-button-text uk-align-center" id="btn1" hidden>Listado Usuarios</button>
+                <a  class="uk-button uk-button-default uk-button-small" id="btn">Cargar datos</a>
+                <a href="index.html" class="uk-button uk-button-default uk-button-small">Volver</a>
+              
+                <div class="uk-section uk-section-default" id="principal">
+            
+                    <div class="uk-container uk-container-small" id="repositorio">
+                        <table class="uk-table uk-table-divider">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Email</th>
+                                    <th>Ciudad</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bodyTable">
+                 
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+
+    <!-- UIkit JS -->
+    <script src="./js/actividad1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.3/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>

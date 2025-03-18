@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Películas</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        #resultados { display: flex; flex-wrap: wrap; gap: 10px; }
+        .pelicula { width: 150px; height: 250px; text-align: center; }
+        img { width: 100%; height: auto; border-radius: 8px; }
+        .spinner { display: none; margin: 20px auto; }
+        #detalles { margin-top: 20px; }
+        #detalles img { width: 300px; height: auto; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Buscador de Películas</h1>
+    
+    <input type="text" id="searchTerm" placeholder="Buscar película...">
+    <button onclick="buscarPeliculas()">Buscar</button>
+    <p id="mensaje"></p>
+    
+    <div id="spinner" class="spinner">Cargando...</div>
+    
+    <table id="tablaResultados" style="display: none;">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Año</th>
+                <th>Poster</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="tablaPeliculas"></tbody>
+    </table>
+    
+    <div id="detalles"></div>
+    <script type="module" src="ej4_peliculas.js"></script>
+</body>
+</html>
