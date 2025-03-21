@@ -1,6 +1,21 @@
 import { API_KEY_UNSPLASH } from '../api/config.js';
 const apiKey = API_KEY_UNSPLASH; // Reemplaza con tu clave API de la OMDBAPI
 
+function activaBtnBuscar(){
+    let btnBuscar = document.getElementById('btn');
+    btnBuscar.classList.add('uk-disabled');
+    //btnBuscar.setAttribute('class','uk-disabled');
+    //btnBuscar.setAttribute('disabled');
+}
+
+function activarBuscar(){
+    let btnBuscar = document.getElementById('btn');
+    btnBuscar.classList.remove('uk-disabled');
+    btnBuscar.classList.add('uk-active');
+    location.reload();
+    
+}
+
 function mostrarFotos(){
     //const accessKey = "7NnttR8zRVI_HW0OlB4CN4k82TXHzWg1uBvEdWSIhMI"; // Reemplázalo con tu clave real
    
@@ -26,9 +41,7 @@ function mostrarFotos(){
             const query = buscarPor.value ;
             const perPage = paginas.value;
             console.log(query + ' ' + perPage);// Número de fotos a obtener
-            const url = `https://api.unsplash.com/search/photos?query=${query}&per_page=${perPage}&client_id=${apiKey}`;
-            
-        
+            const url = `https://api.unsplash.com/search/photos?query=${query}&per_page=${perPage}&client_id=${apiKey}`; 
             fetch(url)
             .then(response => response.json())
             .then(data => {
@@ -51,14 +64,15 @@ function mostrarFotos(){
                 nuevaImg.setAttribute('alt','');
                 nuevaA.appendChild(nuevaImg);
                 nuevoDiv.appendChild(nuevaA);
-                insertar.appendChild(nuevoDiv);
-                
-                console.log(photo);
-                console.log(photo.links.download)
-                
+                insertar.appendChild(nuevoDiv); 
+                //console.log(photo);
+                //console.log(photo.links.download)     
+                 
                 });
-              
 
+            })
+            .then(() => {
+                activaBtnBuscar();  
             })
             .catch(error => console.error("Error al obtener datos:", error));
             return;
@@ -68,6 +82,7 @@ function mostrarFotos(){
 // PUNTO DE ENTRADA A AJAX (FETCH) CUANDO SE HACE CLICK EN EL BOTON
 function inicio(){
     document.getElementById('btn').addEventListener('click',mostrarFotos,false);
+    document.getElementById('btnBusqueda').addEventListener('click',activarBuscar,false);
   }
   
   // PUNTO DE ENTRADA CON EL DOM CARGADO COMPLETAMENTE

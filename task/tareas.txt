@@ -1,0 +1,18 @@
+Tareas a realizar (Toda tarea que aparezca aqui está pendiente de hacer)
+
+-   Actividad 2:
+    - Cuando no se introduce foto a buscar ni cantidad de fotos o alguno de ellos, revisar el mensaje para que salga y en un poco 
+      tiempo que desaparezca, porque al pulsar de nuevo vuelve a salir repetido 
+    
+
+-   Proyecto de la PEC-2:
+    - Eliminar los ficheros de apoyo y ejemplo y el documento pdf. 
+    - Revisar los ficheros js, css si no son necesarios, eliminarlos. 
+    
+- Integrar cath y finally en los fetch (gestión de errores)
+           .catch(error => {
+                document.getElementById("mensaje").textContent = error.message;
+            })
+        .finally(() => {
+                document.getElementById("spinner").style.display = 'none'; // Ocultar spinner
+            });

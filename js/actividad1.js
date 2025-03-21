@@ -100,6 +100,7 @@ function mostrarUsuario(){
         .then(data => {
             insertaElementos(data);
             })
+
     }
     catch(e){
         let repositorio = document.getElementById('bodyTable');
