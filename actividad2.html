@@ -6,11 +6,11 @@
     <title>Actividad 2</title>
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.3/dist/css/uikit.min.css" />
-
+    <script type="module" src="./api/config.js"></script>
 </head>
 <body>
  
-    <div class="uk-container">
+    <div class="uk-container ">
         <div class=" uk-flex-middle uk-height-viewport">
             <div class="uk-card uk-card-default uk-card-body">
                 <h2 class="uk-card-title uk-text-center" id="titulo">Listado Imágenes</h2>
@@ -18,27 +18,32 @@
                 <a class="uk-button uk-button-default uk-button-small" id="btn">Cargar Imágenes</a>
                 <a class="uk-button uk-button-default uk-button-small" href="actividad2.html">Nueva Búsqueda</a>
                 <a href="index.html" class="uk-button uk-button-default uk-button-small">Volver</a>
-                <form class="uk-form-horizontal uk-margin-large" method="post" action="inicio()">
+              
+                    <form class="uk-form-horizontal uk-margin-large" method="post" action="inicio()">
     
-                    <div class="uk-width-1-3@s">
-                        <label class="uk-form-label" for="form-horizontal-text"><h4>Foto a buscar</h4></label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="nameFoto" type="text" placeholder="nombre foto..." required>
+                        <div class="uk-width-1-3@s">
+                            <label class="uk-form-label" for="form-horizontal-text"><h4>Foto a buscar</h4></label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" id="nameFoto" type="text" placeholder="nombre foto..." required>
+                            </div>
                         </div>
-                    </div>
-                    <br>
-                    <div class="uk-width-1-3@s">
-                        <label class="uk-form-label" for="form-horizontal-text"><h4>Numero de fotos</h4></label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" id="numeroFotos" type="number" placeholder="Número de fotos..." required>
+                        <br>
+                        <div class="uk-width-1-3@s">
+                            <label class="uk-form-label" for="form-horizontal-text"><h4>Numero de fotos</h4></label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" id="numeroFotos" type="number" placeholder="Número de fotos..." required>
+                            </div>
                         </div>
-                    </div>
-     
-                </form>
+         
+                    </form>
+               
+               
             </div>
+ 
             <br>
             <div id="gallery" class="uk-grid-small uk-child-width-1-3@m" uk-grid="masonry: true"></div>
         </div>
+       
     </div>
 
     <!-- SECCION PARA MOSTRAR LAS FOTOS -->  
@@ -46,9 +51,9 @@
       
     </div>
     
-  
+    <script type="module" src="./js/config.js"></script>
+    <script type="module" src="./js/actividad2.js"></script> 
     <!-- UIkit JS -->
-    <script src="./js/actividad2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.3/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.3/dist/js/uikit-icons.min.js"></script>
 </body>

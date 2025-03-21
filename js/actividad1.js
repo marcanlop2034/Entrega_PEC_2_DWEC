@@ -70,7 +70,7 @@ function insertaElementos(data){
         elementoBtn.classList.add('uk-link-tex');
         elementoBtn.href= ''//data[x].id;
         elementoBtn.setAttribute('uk-icon','info');
-        elementoBtn.setAttribute('title','Ver Detalles');
+        elementoBtn.setAttribute('uk-tooltip','Ver Detalles');
         elementoBtn.innerHTML='';
         // Agregar evento al botón
         elementoBtn.addEventListener('click', function() {

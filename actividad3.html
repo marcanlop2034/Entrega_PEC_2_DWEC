@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.23.3/dist/css/uikit.min.css" />
+    <script type="module" src="./api/config.js"></script>
+</head>
+<body>
+ 
+ 
+    <div class="uk-container uk-flex uk-flex-center uk-flex-middle uk-height-viewport">
+        <div class=" uk-flex-middle uk-height-viewport">
+            <h2 class="uk-card-title uk-text-center">Listado Usuarios</h2>
+            <button class="uk-button uk-button-text uk-align-center" id="btn1" hidden>Listado Usuarios</button>
+            <a  class="uk-button uk-button-default uk-button-small" id="btn">Cargar datos</a>
+            <a href="index.html" class="uk-button uk-button-default uk-button-small">Volver</a>
+        </div>
+        <br>
+        
+    </div>
+    <div class="uk-container uk-container-small" id="repositorio">
+        <table class="uk-table uk-table-divider">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="bodyTable">
+ 
+            </tbody>
+        </table>
+    </div>
+    <!-- SECCION PARA MOSTRAR LAS FOTOS -->  
+    <div class="uk-container">
+      
+    </div>
+    
+    <script type="module" src="./js/config.js"></script>
+    <script type="module" src="./js/actividad1.js"></script> 
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.23.3/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>

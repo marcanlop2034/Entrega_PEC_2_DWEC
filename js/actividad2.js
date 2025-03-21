@@ -1,7 +1,8 @@
-// 
+import { API_KEY_UNSPLASH } from '../api/config.js';
+const apiKey = API_KEY_UNSPLASH; // Reemplaza con tu clave API de la OMDBAPI
 
 function mostrarFotos(){
-    const accessKey = "7NnttR8zRVI_HW0OlB4CN4k82TXHzWg1uBvEdWSIhMI"; // Reemplázalo con tu clave real
+    //const accessKey = "7NnttR8zRVI_HW0OlB4CN4k82TXHzWg1uBvEdWSIhMI"; // Reemplázalo con tu clave real
    
     // URL de la API para buscar imágenes (ejemplo: "naturaleza")
     let buscarPor = document.getElementById('nameFoto');
@@ -25,7 +26,7 @@ function mostrarFotos(){
             const query = buscarPor.value ;
             const perPage = paginas.value;
             console.log(query + ' ' + perPage);// Número de fotos a obtener
-            const url = `https://api.unsplash.com/search/photos?query=${query}&per_page=${perPage}&client_id=${accessKey}`;
+            const url = `https://api.unsplash.com/search/photos?query=${query}&per_page=${perPage}&client_id=${apiKey}`;
             
         
             fetch(url)

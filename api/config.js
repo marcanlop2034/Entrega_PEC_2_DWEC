@@ -1,0 +1,7 @@
+// config.js
+//const API_KEY_OMDBAPI = 'TU_API_KEY';
+//const API_KEY_NASA = 'TU_API_KEY';
+const API_KEY_UNSPLASH = '7NnttR8zRVI_HW0OlB4CN4k82TXHzWg1uBvEdWSIhMI';
+
+//export { API_KEY_OMDBAPI, API_KEY_NASA, API_KEY_UNSPLASH };
+export { API_KEY_UNSPLASH };
