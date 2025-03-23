@@ -18,10 +18,14 @@ function oculatarDetalle(){
     nombre.innerHTML='';
     email.innerHTML='';
     phone.innerHTML='';
+    // Ocultar el mensaje por error de fetch
+    let menseajeError = document.getElementById("mensaje");
+    menseajeError.innerHTML = "";
+
 
 }
 
- function muestraCard(data){
+function muestraCard(data){
     let nombre = document.getElementById('name');
     let email = document.getElementById('email');
     let phone = document.getElementById('phone');
@@ -34,11 +38,18 @@ function oculatarDetalle(){
 function mostrarDetalles(id){
    ocultarPrincipal();
    let url = 'https://jsonplaceholder.typicode.com/users/'+id;
+   
    fetch(url)
     .then(response=> response.json())
     .then(data => {
         console.log(data);
         muestraCard(data);
+    })
+    .catch(error => {
+        let menseajeError = document.getElementById("mensaje");
+        menseajeError.style.color='Red';
+        menseajeError.classList = 'uk-animation-slide-right';
+        menseajeError.innerHTML = "Error de conexión, revise";
     })
 
 }
@@ -100,6 +111,13 @@ function mostrarUsuario(){
         .then(data => {
             insertaElementos(data);
             })
+        .catch(error => {
+                let menseajeError = document.getElementById("mensaje");
+                menseajeError.style.color='Red';
+                menseajeError.classList = 'uk-animation-slide-right';
+                menseajeError.innerHTML = "Error de conexión, revise";
+
+        })
 
     }
     catch(e){
