@@ -1,11 +1,11 @@
 import { API_KEY_UNSPLASH } from '../api/config.js';
 const apiKey = API_KEY_UNSPLASH; // Reemplaza con tu clave API de la OMDBAPI
 
+
 function activaBtnBuscar(){
     let btnBuscar = document.getElementById('btn');
     btnBuscar.classList.add('uk-disabled');
-    //btnBuscar.setAttribute('class','uk-disabled');
-    //btnBuscar.setAttribute('disabled');
+    btnBuscar.style.color='grey';
 }
 
 function activarBuscar(){
@@ -13,31 +13,25 @@ function activarBuscar(){
     btnBuscar.classList.remove('uk-disabled');
     btnBuscar.classList.add('uk-active');
     location.reload();
-    
 }
 
-function mostrarFotos(){
-    //const accessKey = "7NnttR8zRVI_HW0OlB4CN4k82TXHzWg1uBvEdWSIhMI"; // Reemplázalo con tu clave real
-   
+function mostrarFotos(){  
     // URL de la API para buscar imágenes (ejemplo: "naturaleza")
     let buscarPor = document.getElementById('nameFoto');
     let paginas = document.getElementById('numeroFotos');
     let a = buscarPor.value;
     let b= paginas.value;
-    console.log('buscarPor.value ' + buscarPor.value + '   ' + 'paginas.value ' + paginas.value);
+    //console.log('buscarPor.value ' + buscarPor.value + '   ' + 'paginas.value ' + paginas.value);
     if(a.trim () === '' || b.trim() === ''){
-        let padre = document.getElementById('titulo');
-        let hijo = document.createElement('p');
-        let cerrar = document.createElement('a');
-        cerrar.setAttribute('class','uk-alert-close');
-        cerrar.setAttribute('uk-close','');
-        hijo.innerHTML="Debe introducir texto y/o número de fotos";
-        hijo.setAttribute('class','uk-alert-warning');
-        padre.appendChild(cerrar);
-        padre.appendChild(hijo);
+        let menseaje = document.getElementById('pError');
+        menseaje.style.color='Red';
+        menseaje.classList=('uk-animation-slide-right');
+        menseaje.innerHTML="Introduzca texto y/o número de fotos a buscar";
         return;
     }
     else{
+            let menseaje = document.getElementById('pError');
+            menseaje.innerHTML="";
             const query = buscarPor.value ;
             const perPage = paginas.value;
             console.log(query + ' ' + perPage);// Número de fotos a obtener
@@ -74,7 +68,13 @@ function mostrarFotos(){
             .then(() => {
                 activaBtnBuscar();  
             })
-            .catch(error => console.error("Error al obtener datos:", error));
+            .catch(error => {
+                console.error("Error al obtener datos:", error);
+                let menseaje = document.getElementById('pError');
+                menseaje.style.color='Red';
+                menseaje.classList=('uk-animation-slide-right');
+                menseaje.innerHTML="No ha sido posible conectar con el origen de datos, revise";
+            });
             return;
         }
 }
@@ -83,7 +83,7 @@ function mostrarFotos(){
 function inicio(){
     document.getElementById('btn').addEventListener('click',mostrarFotos,false);
     document.getElementById('btnBusqueda').addEventListener('click',activarBuscar,false);
-  }
+}
   
   // PUNTO DE ENTRADA CON EL DOM CARGADO COMPLETAMENTE
   document.addEventListener('DOMContentLoaded', inicio, false);
